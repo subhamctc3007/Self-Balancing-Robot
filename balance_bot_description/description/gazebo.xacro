@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Required Gazebo system plugins -->
+
+    <!-- Joint State Publisher Plugin -->
+    <gazebo>
+        <plugin filename="gz-sim-joint-state-publisher-system"
+            name="gz::sim::systems::JointStatePublisher">
+        </plugin>
+    </gazebo>
+
+    <!-- ROS2 Control Plugin -->
+    <gazebo>
+        <plugin filename="gz_ros2_control-system"
+            name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+
+            <parameters>
+                $(find balance_bot_description)/config/controllers.yaml
+            </parameters>
+
+        </plugin>
+    </gazebo>
+
+</robot>
