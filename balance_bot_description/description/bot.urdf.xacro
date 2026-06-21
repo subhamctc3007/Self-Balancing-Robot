@@ -5,6 +5,8 @@
 
     <!-- Colours/Materials -->
     <xacro:include filename="materials.xacro"/>
+    <!-- Inertial properties -->
+    <xacro:include filename="inertial_macros.xacro"/>
 
     <!-- dimensional constants -->
     <xacro:property name="body_height" value="0.3" />
@@ -17,17 +19,17 @@
     <!-- groud clearance will be same as wheel radius -->
     <xacro:property name="ground_clearance" value="0.05" /> 
 
-    <xacro:property name="body_mass" value="2.0" />
-    <xacro:property name="wheel_mass" value="0.2" />
+    <xacro:property name="body_mass" value="1.0" />
+    <xacro:property name="wheel_mass" value="0.1" />
 
     <!-- Robot Parts -->
     <xacro:include filename="body.xacro"/>
     <xacro:include filename="wheels.xacro"/>
+    <xacro:include filename="imu.xacro"/>
 
     <!-- Gazebo plugins -->
     <xacro:include filename="gazebo.xacro"/>
     <!-- ROS2 Control Plugin -->
     <xacro:include filename="ros2_control.xacro"/>
-    
 
 </robot>

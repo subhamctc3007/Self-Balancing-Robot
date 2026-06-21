@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
-
 import rclpy
 from rclpy.node import Node
-
 from geometry_msgs.msg import Twist
 from geometry_msgs.msg import TwistStamped
 
@@ -33,8 +31,16 @@ class TwistToStamped(Node):
 
 def main(args=None):
     rclpy.init(args=args)
+
     node = TwistToStamped()
-    rclpy.spin(node)
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        pass
+
+    stop_msg = TwistStamped()
+    node.pub.publish(stop_msg)
+
     node.destroy_node()
     rclpy.shutdown()
 

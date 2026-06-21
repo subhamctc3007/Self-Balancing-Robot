@@ -1,6 +1,24 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    
+    <link name="imu_link">
+        <visual>
+            <origin xyz="0 0 0" />
+            <geometry>
+                <box size="0.02 0.02 0.01" />
+            </geometry>
+            <material name="green"></material>
+        </visual>
+        <xacro:inertial_box mass="0.001" x="0.02" y="0.02" z="0.01">
+            <origin xyz="0 0 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="imu_joint" type="fixed">
+        <parent link="body_link" />
+        <child link="imu_link" />
+        <!-- Place IMU near the wheel axle -->
+        <origin xyz="0 0 0" />
+    </joint>
 
 </robot>

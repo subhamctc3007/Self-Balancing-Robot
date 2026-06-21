@@ -74,6 +74,6 @@ def generate_launch_description():
         spawn,
         controller_manager,
         joint_state_broadcaster,
-        twist_to_stamped_adapter,
-        teleop,
+        # twist_to_stamped_adapter,
+        # teleop,
     ])

@@ -18,16 +18,9 @@
             </geometry>
         </collision>
 
-        <inertial>
-            <mass value="${wheel_mass}"/>
-            <inertia
-                ixx="0.0003"
-                ixy="0"
-                ixz="0"
-                iyy="0.0003"
-                iyz="0"
-                izz="0.0005"/>
-        </inertial>
+        <xacro:inertial_cylinder mass="${wheel_mass}" radius="${wheel_radius}" length="${wheel_width}">
+            <origin xyz="0 0 0"/>
+        </xacro:inertial_cylinder>
     </link>
 
     <joint name="left_wheel_joint" type="continuous">
@@ -55,16 +48,9 @@
             </geometry>
         </collision>
 
-        <inertial>
-            <mass value="${wheel_mass}"/>
-            <inertia
-                ixx="0.0003"
-                ixy="0"
-                ixz="0"
-                iyy="0.0003"
-                iyz="0"
-                izz="0.0005"/>
-        </inertial>
+        <xacro:inertial_cylinder mass="${wheel_mass}" radius="${wheel_radius}" length="${wheel_width}">
+            <origin xyz="0 0 0"/>
+        </xacro:inertial_cylinder>
     </link>
 
     <joint name="right_wheel_joint" type="continuous">
